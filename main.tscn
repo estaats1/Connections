@@ -1,0 +1,291 @@
+[gd_scene load_steps=10 format=3 uid="uid://bkmrj6klfvleo"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_sdw7u"]
+[ext_resource type="StyleBox" uid="uid://dlhp0yvkj4bly" path="res://colors/unclicked.tres" id="2_po1an"]
+[ext_resource type="StyleBox" uid="uid://d06l7iya6gkip" path="res://colors/clicked.tres" id="3_ngt7y"]
+[ext_resource type="StyleBox" uid="uid://be6iynqb08tq0" path="res://colors/yellow.tres" id="4_r80ms"]
+[ext_resource type="StyleBox" uid="uid://ci5jjaffgp8i6" path="res://colors/green.tres" id="5_wgf7b"]
+[ext_resource type="StyleBox" uid="uid://cggj4shcb0jl8" path="res://colors/blue.tres" id="6_p4g7w"]
+[ext_resource type="StyleBox" uid="uid://h1pii7ymj72y" path="res://colors/purple.tres" id="7_aufkv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lewmk"]
+bg_color = Color(0.858824, 0.858824, 0.858824, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="GDScript" id="GDScript_nwyim"]
+script/source = "extends Button
+
+var is_pressed
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	is_pressed = false
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_sdw7u")
+
+[node name="Button1" type="Button" parent="."]
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 250.0
+offset_bottom = 150.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_styles/normal = ExtResource("2_po1an")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lewmk")
+theme_override_styles/pressed = ExtResource("3_ngt7y")
+theme_override_styles/disabled = ExtResource("4_r80ms")
+text = "1"
+script = SubResource("GDScript_nwyim")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 350.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 150.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_styles/normal = ExtResource("2_po1an")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lewmk")
+theme_override_styles/pressed = ExtResource("3_ngt7y")
+theme_override_styles/disabled = ExtResource("4_r80ms")
+text = "2"
+script = SubResource("GDScript_nwyim")
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 550.0
+offset_top = 50.0
+offset_right = 650.0
+offset_bottom = 150.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_styles/normal = ExtResource("2_po1an")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lewmk")
+theme_override_styles/pressed = ExtResource("3_ngt7y")
+theme_override_styles/disabled = ExtResource("4_r80ms")
+text = "3"
+script = SubResource("GDScript_nwyim")
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 750.0
+offset_top = 50.0
+offset_right = 850.0
+offset_bottom = 150.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_styles/normal = ExtResource("2_po1an")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lewmk")
+theme_override_styles/pressed = ExtResource("3_ngt7y")
+theme_override_styles/disabled = ExtResource("4_r80ms")
+text = "4"
+script = SubResource("GDScript_nwyim")
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 150.0
+offset_top = 200.0
+offset_right = 250.0
+offset_bottom = 300.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_styles/normal = ExtResource("2_po1an")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lewmk")
+theme_override_styles/pressed = ExtResource("3_ngt7y")
+theme_override_styles/disabled = ExtResource("5_wgf7b")
+text = "5"
+script = SubResource("GDScript_nwyim")
+
+[node name="Button6" type="Button" parent="."]
+offset_left = 350.0
+offset_top = 200.0
+offset_right = 450.0
+offset_bottom = 300.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_styles/normal = ExtResource("2_po1an")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lewmk")
+theme_override_styles/pressed = ExtResource("3_ngt7y")
+theme_override_styles/disabled = ExtResource("5_wgf7b")
+text = "6"
+script = SubResource("GDScript_nwyim")
+
+[node name="Button7" type="Button" parent="."]
+offset_left = 550.0
+offset_top = 200.0
+offset_right = 650.0
+offset_bottom = 300.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_styles/normal = ExtResource("2_po1an")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lewmk")
+theme_override_styles/pressed = ExtResource("3_ngt7y")
+theme_override_styles/disabled = ExtResource("5_wgf7b")
+text = "7"
+script = SubResource("GDScript_nwyim")
+
+[node name="Button8" type="Button" parent="."]
+offset_left = 750.0
+offset_top = 200.0
+offset_right = 850.0
+offset_bottom = 300.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_styles/normal = ExtResource("2_po1an")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lewmk")
+theme_override_styles/pressed = ExtResource("3_ngt7y")
+theme_override_styles/disabled = ExtResource("5_wgf7b")
+text = "8"
+script = SubResource("GDScript_nwyim")
+
+[node name="Button9" type="Button" parent="."]
+offset_left = 150.0
+offset_top = 350.0
+offset_right = 250.0
+offset_bottom = 450.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_styles/normal = ExtResource("2_po1an")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lewmk")
+theme_override_styles/pressed = ExtResource("3_ngt7y")
+theme_override_styles/disabled = ExtResource("6_p4g7w")
+text = "9"
+script = SubResource("GDScript_nwyim")
+
+[node name="Button10" type="Button" parent="."]
+offset_left = 350.0
+offset_top = 350.0
+offset_right = 450.0
+offset_bottom = 450.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_styles/normal = ExtResource("2_po1an")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lewmk")
+theme_override_styles/pressed = ExtResource("3_ngt7y")
+theme_override_styles/disabled = ExtResource("6_p4g7w")
+text = "10"
+script = SubResource("GDScript_nwyim")
+
+[node name="Button11" type="Button" parent="."]
+offset_left = 550.0
+offset_top = 350.0
+offset_right = 650.0
+offset_bottom = 450.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_styles/normal = ExtResource("2_po1an")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lewmk")
+theme_override_styles/pressed = ExtResource("3_ngt7y")
+theme_override_styles/disabled = ExtResource("6_p4g7w")
+text = "11"
+script = SubResource("GDScript_nwyim")
+
+[node name="Button12" type="Button" parent="."]
+offset_left = 750.0
+offset_top = 350.0
+offset_right = 850.0
+offset_bottom = 450.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_styles/normal = ExtResource("2_po1an")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lewmk")
+theme_override_styles/pressed = ExtResource("3_ngt7y")
+theme_override_styles/disabled = ExtResource("6_p4g7w")
+text = "12"
+script = SubResource("GDScript_nwyim")
+
+[node name="Button13" type="Button" parent="."]
+offset_left = 150.0
+offset_top = 500.0
+offset_right = 250.0
+offset_bottom = 600.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_styles/normal = ExtResource("2_po1an")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lewmk")
+theme_override_styles/pressed = ExtResource("3_ngt7y")
+theme_override_styles/disabled = ExtResource("7_aufkv")
+text = "13"
+script = SubResource("GDScript_nwyim")
+
+[node name="Button14" type="Button" parent="."]
+offset_left = 350.0
+offset_top = 500.0
+offset_right = 450.0
+offset_bottom = 600.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_styles/normal = ExtResource("2_po1an")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lewmk")
+theme_override_styles/pressed = ExtResource("3_ngt7y")
+theme_override_styles/disabled = ExtResource("7_aufkv")
+text = "14"
+script = SubResource("GDScript_nwyim")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button15" type="Button" parent="."]
+offset_left = 550.0
+offset_top = 500.0
+offset_right = 650.0
+offset_bottom = 600.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_styles/normal = ExtResource("2_po1an")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lewmk")
+theme_override_styles/pressed = ExtResource("3_ngt7y")
+theme_override_styles/disabled = ExtResource("7_aufkv")
+text = "15"
+script = SubResource("GDScript_nwyim")
+
+[node name="Button16" type="Button" parent="."]
+offset_left = 750.0
+offset_top = 500.0
+offset_right = 850.0
+offset_bottom = 600.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_styles/normal = ExtResource("2_po1an")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lewmk")
+theme_override_styles/pressed = ExtResource("3_ngt7y")
+theme_override_styles/disabled = ExtResource("7_aufkv")
+text = "16"
+script = SubResource("GDScript_nwyim")
+
+[node name="GuessButton" type="Button" parent="."]
+offset_left = 950.0
+offset_top = 300.0
+offset_right = 1050.0
+offset_bottom = 375.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.501961, 0.501961, 0.501961, 1)
+theme_override_styles/normal = ExtResource("2_po1an")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lewmk")
+theme_override_styles/pressed = ExtResource("3_ngt7y")
+theme_override_styles/disabled = ExtResource("7_aufkv")
+text = "Guess"
+script = SubResource("GDScript_nwyim")
+
+[connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="Button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="Button9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="Button10" to="." method="_on_button_10_pressed"]
+[connection signal="pressed" from="Button11" to="." method="_on_button_11_pressed"]
+[connection signal="pressed" from="Button12" to="." method="_on_button_12_pressed"]
+[connection signal="pressed" from="Button13" to="." method="_on_button_13_pressed"]
+[connection signal="pressed" from="Button14" to="." method="_on_button_14_pressed"]
+[connection signal="pressed" from="Button15" to="." method="_on_button_15_pressed"]
+[connection signal="pressed" from="Button16" to="." method="_on_button_16_pressed"]
+[connection signal="pressed" from="GuessButton" to="." method="_on_guess_button_pressed"]
