@@ -5,7 +5,7 @@ var num_solved = 0
 var solved = 0
 
 var y = 0
-var move_speed = 500
+var move_speed = 1000
 var buttons = []
 var button_pos = []
 
@@ -16,7 +16,7 @@ var button_positions = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Get random positions
-	var positions = [Vector2(150, 50), Vector2(150, 200), Vector2(150, 350), Vector2(150, 500), Vector2(350, 50), Vector2(350, 200), Vector2(350, 350), Vector2(350, 500), Vector2(550, 50), Vector2(550, 200), Vector2(550, 350), Vector2(550, 500), Vector2(750, 50), Vector2(750, 200), Vector2(750, 350), Vector2(750, 500)]
+	var positions = [Vector2(100, 100), Vector2(100, 400), Vector2(100, 700), Vector2(100, 1000), Vector2(400, 100), Vector2(400, 400), Vector2(400, 700), Vector2(400, 1000), Vector2(700, 100), Vector2(700, 400), Vector2(700, 700), Vector2(700, 1000), Vector2(1000, 100), Vector2(1000, 400), Vector2(1000, 700), Vector2(1000, 1000)]
 	positions.shuffle()
 	
 	var count = 0
@@ -35,39 +35,39 @@ func _process(delta):
 	
 
 func move(delta):
-	y = num_solved * 150 - 100
+	y = num_solved * 300 - 200
 	if solved == 1:
-		$Button1.global_position = $Button1.global_position.move_toward(Vector2(150, y), delta*move_speed)
-		$Button2.global_position = $Button2.global_position.move_toward(Vector2(350, y), delta*move_speed)
-		$Button3.global_position = $Button3.global_position.move_toward(Vector2(550, y), delta*move_speed)
-		$Button4.global_position = $Button4.global_position.move_toward(Vector2(750, y), delta*move_speed)
+		$Button1.global_position = $Button1.global_position.move_toward(Vector2(100, y), delta*move_speed)
+		$Button2.global_position = $Button2.global_position.move_toward(Vector2(400, y), delta*move_speed)
+		$Button3.global_position = $Button3.global_position.move_toward(Vector2(700, y), delta*move_speed)
+		$Button4.global_position = $Button4.global_position.move_toward(Vector2(1000, y), delta*move_speed)
 		
 		for x in range(button_pos.size()):
 			buttons[x].global_position = buttons[x].global_position.move_toward(button_pos[x], delta*move_speed)
 		
 	elif solved == 2:
-		$Button5.global_position = $Button5.global_position.move_toward(Vector2(150, y), delta*move_speed)
-		$Button6.global_position = $Button6.global_position.move_toward(Vector2(350, y), delta*move_speed)
-		$Button7.global_position = $Button7.global_position.move_toward(Vector2(550, y), delta*move_speed)
-		$Button8.global_position = $Button8.global_position.move_toward(Vector2(750, y), delta*move_speed)
+		$Button5.global_position = $Button5.global_position.move_toward(Vector2(100, y), delta*move_speed)
+		$Button6.global_position = $Button6.global_position.move_toward(Vector2(400, y), delta*move_speed)
+		$Button7.global_position = $Button7.global_position.move_toward(Vector2(700, y), delta*move_speed)
+		$Button8.global_position = $Button8.global_position.move_toward(Vector2(1000, y), delta*move_speed)
 		
 		for x in range(button_pos.size()):
 			buttons[x].global_position = buttons[x].global_position.move_toward(button_pos[x], delta*move_speed)
 		
 	elif solved == 3:
-		$Button9.global_position = $Button9.global_position.move_toward(Vector2(150, y), delta*move_speed)
-		$Button10.global_position = $Button10.global_position.move_toward(Vector2(350, y), delta*move_speed)
-		$Button11.global_position = $Button11.global_position.move_toward(Vector2(550, y), delta*move_speed)
-		$Button12.global_position = $Button12.global_position.move_toward(Vector2(750, y), delta*move_speed)
+		$Button9.global_position = $Button9.global_position.move_toward(Vector2(100, y), delta*move_speed)
+		$Button10.global_position = $Button10.global_position.move_toward(Vector2(400, y), delta*move_speed)
+		$Button11.global_position = $Button11.global_position.move_toward(Vector2(700, y), delta*move_speed)
+		$Button12.global_position = $Button12.global_position.move_toward(Vector2(1000, y), delta*move_speed)
 		
 		for x in range(button_pos.size()):
 			buttons[x].global_position = buttons[x].global_position.move_toward(button_pos[x], delta*move_speed)
 		
 	elif solved == 4:
-		$Button13.global_position = $Button13.global_position.move_toward(Vector2(150, y), delta*move_speed)
-		$Button14.global_position = $Button14.global_position.move_toward(Vector2(350, y), delta*move_speed)
-		$Button15.global_position = $Button15.global_position.move_toward(Vector2(550, y), delta*move_speed)
-		$Button16.global_position = $Button16.global_position.move_toward(Vector2(750, y), delta*move_speed)
+		$Button13.global_position = $Button13.global_position.move_toward(Vector2(100, y), delta*move_speed)
+		$Button14.global_position = $Button14.global_position.move_toward(Vector2(400, y), delta*move_speed)
+		$Button15.global_position = $Button15.global_position.move_toward(Vector2(700, y), delta*move_speed)
+		$Button16.global_position = $Button16.global_position.move_toward(Vector2(1000, y), delta*move_speed)
 		
 		for x in range(button_pos.size()):
 			buttons[x].global_position = buttons[x].global_position.move_toward(button_pos[x], delta*move_speed)
@@ -156,7 +156,7 @@ func _on_guess_button_pressed():
 		num_solved += 1
 		solved = 1
 		
-		y = num_solved * 150 - 100
+		y = num_solved * 300 - 200
 		for button in get_children():
 			if button.global_position[1] == y:
 				if button != $Button1 && button != $Button2 && button != $Button3 && button != $Button4:
@@ -179,7 +179,7 @@ func _on_guess_button_pressed():
 		num_solved += 1
 		solved = 2
 		
-		y = num_solved * 150 - 100
+		y = num_solved * 300 - 200
 		for button in get_children():
 			if button.global_position[1] == y:
 				if button != $Button5 && button != $Button6 && button != $Button7 && button != $Button8:
@@ -201,7 +201,7 @@ func _on_guess_button_pressed():
 		num_solved += 1
 		solved = 3
 		
-		y = num_solved * 150 - 100
+		y = num_solved * 300 - 200
 		for button in get_children():
 			if button.global_position[1] == y:
 				if button != $Button9 && button != $Button10 && button != $Button11 && button != $Button12:
@@ -223,7 +223,7 @@ func _on_guess_button_pressed():
 		num_solved += 1
 		solved = 4
 		
-		y = num_solved * 150 - 100
+		y = num_solved * 300 - 200
 		for button in get_children():
 			if button.global_position[1] == y:
 				if button != $Button13 && button != $Button14 && button != $Button15 && button != $Button16:
