@@ -5,7 +5,7 @@ var num_solved = 0
 var solved = 0
 
 var y = 0
-var move_speed = 1000
+var move_speed = 1250
 var buttons = []
 var button_pos = []
 
@@ -28,11 +28,50 @@ func _ready():
 			button_positions.append(positions[count])
 			button_pressed.append(false)
 			count += 1
+	
+	$ColorRect1.visible = false
+	$ColorRect2.visible = false
+	$ColorRect3.visible = false
+	$ColorRect4.visible = false
+	$ColorRect5.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	move(delta)
 	
+	y = num_solved * 300 - 200
+	
+	if solved == 1 && $Button1.global_position == Vector2(100, y) && $Button2.global_position == Vector2(400, y) && $Button3.global_position == Vector2(700, y) && $Button4.global_position == Vector2(1000, y):
+		$ColorRect1.global_position = Vector2(100, y-25)
+		$ColorRect1.visible = true
+		
+		if num_solved == 4:
+			await get_tree().create_timer(1).timeout
+			$ColorRect5.visible = true
+			
+	elif solved == 2 && $Button5.global_position == Vector2(100, y) && $Button6.global_position == Vector2(400, y) && $Button7.global_position == Vector2(700, y) && $Button8.global_position == Vector2(1000, y):
+		$ColorRect2.global_position = Vector2(100, y-25)
+		$ColorRect2.visible = true
+		
+		if num_solved == 4:
+			await get_tree().create_timer(1).timeout
+			$ColorRect5.visible = true
+			
+	elif solved == 3 && $Button9.global_position == Vector2(100, y) && $Button10.global_position == Vector2(400, y) && $Button11.global_position == Vector2(700, y) && $Button12.global_position == Vector2(1000, y):
+		$ColorRect3.global_position = Vector2(100, y-25)
+		$ColorRect3.visible = true
+		
+		if num_solved == 4:
+			await get_tree().create_timer(1).timeout
+			$ColorRect5.visible = true
+			
+	elif solved == 4 && $Button13.global_position == Vector2(100, y) && $Button14.global_position == Vector2(400, y) && $Button15.global_position == Vector2(700, y) && $Button16.global_position == Vector2(1000, y):
+		$ColorRect4.global_position = Vector2(100, y-25)
+		$ColorRect4.visible = true
+		
+		if num_solved == 4:
+			await get_tree().create_timer(1).timeout
+			$ColorRect5.visible = true
 
 func move(delta):
 	y = num_solved * 300 - 200
